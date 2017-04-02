@@ -1,4 +1,4 @@
-package com.ran.learn.concurrency.chapter5;
+package com.ran.learn.concurrency.chapter05;
 
 public class ThreadJoin3 {
 

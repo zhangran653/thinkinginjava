@@ -1,4 +1,4 @@
-package com.ran.learn.concurrency.chapter5;
+package com.ran.learn.concurrency.chapter05;
 
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
