@@ -1,4 +1,4 @@
-package com.ran.learn.concurrency;
+package com.ran.learn.concurrency.chapter01;
 
 public class TryConcurrency {
 
