@@ -23,5 +23,19 @@ public class CreateThread {
         t2.start();
         System.out.println(t1.getName());
         System.out.println(t2.getName());
+
+        Thread t3 = new Thread("MyThraed");
+        Thread t4 = new Thread(() -> System.out.println("Runnable..."));
+
+        t3.start();
+        t4.start();
+
+        System.out.println(t3.getName());
+        System.out.println(t4.getName());
+
+        Thread t5 = new Thread(() -> System.out.println("Runnable...." + Thread.currentThread().getName()),
+                "RunnableThread");
+        t5.start();
+        System.out.println(t5.getName());
     }
 }
