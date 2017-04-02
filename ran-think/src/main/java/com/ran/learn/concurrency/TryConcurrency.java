@@ -3,19 +3,24 @@ package com.ran.learn.concurrency;
 public class TryConcurrency {
 
     public static void main(String[] args) {
-        
-        Thread t1 = new Thread(){
+
+        Thread t1 = new Thread("READ") {
             @Override
-            public void run(){
+            public void run() {
                 readFromDatabase();
             }
         };
+        Thread t2 = new Thread("WRITE") {
+            @Override
+            public void run() {
+                writeToFile();
+            }
+        };
         t1.start();
-        writeToFile();
-        
-        
-//        readFromDatabase();
-//        writeToFile();
+        t2.start();
+
+        // readFromDatabase();
+        // writeToFile();
     }
 
     private static void readFromDatabase() {
