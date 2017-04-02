@@ -1,9 +1,8 @@
 package com.ran.learn.concurrency.chapter04;
 
-import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
-public class GaemonDemo {
+public class DaemonDemo {
 
     public static void main(String[] args) {
         Thread t = new Thread(() -> {
