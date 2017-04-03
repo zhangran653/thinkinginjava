@@ -16,9 +16,8 @@ public class ThreadInterrupt2 {
 
                     System.out.println(getName() + " is running..."
                             + "  isInterrupted :" + this.isInterrupted());
-                    double d = 0;
-                    for (int i = 0; i < 900000; i++) {
-                        d = d + (Math.PI + Math.E) / d;
+                    long time = System.currentTimeMillis();
+                    while (System.currentTimeMillis() - time < 2000) {
                     }
                     if (this.isInterrupted()) {
                         try {
@@ -26,8 +25,8 @@ public class ThreadInterrupt2 {
                              * 注意1:如果线程被调用了interrupt()，那么如果此次该线程并不在wait(),sleep(),join()时，
                              * 下次执行wait(),sleep(),join()时，一样会抛出InterruptedException，当然抛出后该线程的中断状态也回被系统复位。
                              */
-                            for (int i = 0; i < 900000; i++) {
-                                d = d + (Math.PI + Math.E) / d;
+                            long time1 = System.currentTimeMillis();
+                            while (System.currentTimeMillis() - time1 < 2000) {
                             }
                             System.out.println("====================");
                             Thread.sleep(1000);
@@ -52,6 +51,9 @@ public class ThreadInterrupt2 {
         }
         t1.interrupt();
         while (true) {
+            long time = System.currentTimeMillis();
+            while (System.currentTimeMillis() - time < 2000) {
+            }
             System.out.println(t1.isAlive());
         }
 
