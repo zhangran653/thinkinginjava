@@ -11,7 +11,8 @@ public class ThreadInterrupt2 {
         Thread t1 = new Thread("t1") {
             @Override
             public void run() {
-                while (true) {
+                boolean isStop = false;
+                while (!isStop) {
 
                     System.out.println(getName() + " is running..."
                             + "  isInterrupted :" + this.isInterrupted());
@@ -36,6 +37,7 @@ public class ThreadInterrupt2 {
                             System.out.println("===========" + getName()
                                     + "  isInterrupted :"
                                     + this.isInterrupted());
+                            isStop = true;
                         }
                     }
                 }
@@ -49,6 +51,9 @@ public class ThreadInterrupt2 {
             e.printStackTrace();
         }
         t1.interrupt();
+        while (true) {
+            System.out.println(t1.isAlive());
+        }
 
     }
 }

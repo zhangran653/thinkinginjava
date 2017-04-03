@@ -1,7 +1,5 @@
 package com.ran.learn.concurrency.chapter06;
 
-import java.util.concurrent.TimeUnit;
-
 public class ThreadInterrupt {
 
     public static void main(String[] args) {
@@ -23,5 +21,8 @@ public class ThreadInterrupt {
         System.out.println(t.isInterrupted());
         t.interrupt();
         System.out.println(t.isInterrupted());
+        while (true) {
+            System.out.println(t.isAlive());
+        }
     }
 }
