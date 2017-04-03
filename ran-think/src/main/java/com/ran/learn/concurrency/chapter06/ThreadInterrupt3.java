@@ -23,6 +23,7 @@ public class ThreadInterrupt3 {
 
         // 在线程sleep状态下进行中断
         Thread thread2 = new Thread() {
+            @SuppressWarnings("static-access")
             public void run() {
                 try {
                     this.sleep(2000);
