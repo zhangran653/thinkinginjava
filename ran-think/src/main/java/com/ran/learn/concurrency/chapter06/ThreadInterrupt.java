@@ -6,23 +6,19 @@ public class ThreadInterrupt {
 
     public static void main(String[] args) {
         Thread t = new Thread(() -> {
-            while (true) {
-                System.out.println("--");
-                try {
-                    TimeUnit.MILLISECONDS.sleep(200);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+            for (int i = 0; i < 100; i++) {
+                // try {
+                System.out.println(i);
+                // TimeUnit.MILLISECONDS.sleep(200);
+                // } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                // e.printStackTrace();
+                // }
+                System.out.println(Thread.currentThread().isAlive());
             }
+            System.out.println(Thread.currentThread().isAlive());
         });
         t.start();
-        try {
-            TimeUnit.MILLISECONDS.sleep(200);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
 
         System.out.println(t.isInterrupted());
         t.interrupt();
