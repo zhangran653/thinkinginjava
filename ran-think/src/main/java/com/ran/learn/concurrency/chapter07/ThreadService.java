@@ -6,6 +6,12 @@ public class ThreadService {
 
     private volatile boolean isFinished = false;
 
+    /**
+     * 思路：将任务线程设置为守护线程，执行线程只负责开启任务线程。执行线程需要join，让任务线程执行完成。当需要强行关闭时，由于执行线程此时join，即wait
+     * 对其使用interrupt，捕获异常，完成生命周期，任务线程由于是守护线程，自然会关闭。
+     * 
+     * @param r
+     */
     public void execute(Runnable r) {
         executeThread = new Thread() {
 
@@ -37,6 +43,7 @@ public class ThreadService {
                 break;
             }
         }
+
         isFinished = false;
     }
 }

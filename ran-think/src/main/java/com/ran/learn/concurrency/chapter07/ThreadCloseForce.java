@@ -8,7 +8,7 @@ public class ThreadCloseForce {
 
         t.execute(() -> {
             long c = System.currentTimeMillis();
-            while (System.currentTimeMillis() - c < 4000) {
+            while (System.currentTimeMillis() - c < 6000) {
 
             }
             System.out.println("task finished");
