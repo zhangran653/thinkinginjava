@@ -19,6 +19,16 @@ public class SynchronizedLock {
 
         };
         t2.start();
+
+        ThisLock l2 = new ThisLock();
+        Thread t3 = new Thread("T3") {
+            @Override
+            public void run() {
+                l2.m1();
+            }
+
+        };
+        t3.start();
     }
 
     public static class ThisLock {
