@@ -14,6 +14,7 @@ public class ThreadCloseForce {
             System.out.println("task finished");
 
         });
+
         t.shutdown(5000);
         long end = System.currentTimeMillis();
         System.out.println("running time:" + (end - start));
