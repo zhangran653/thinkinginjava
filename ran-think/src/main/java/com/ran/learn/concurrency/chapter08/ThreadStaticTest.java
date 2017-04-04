@@ -2,7 +2,7 @@ package com.ran.learn.concurrency.chapter08;
 
 public class ThreadStaticTest {
     public static void main(String[] args) {
-        
+
         Thread t1 = new Thread("T1") {
             @Override
             public void run() {
@@ -18,6 +18,15 @@ public class ThreadStaticTest {
 
         };
         t2.start();
+
+        Thread t3 = new Thread("T3") {
+            @Override
+            public void run() {
+                SynchronizedStatic.m3();
+            }
+
+        };
+        t3.start();
     }
 
 }
