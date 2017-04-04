@@ -6,22 +6,29 @@ public class SynchronizedTicketWinowRunnable implements Runnable {
     private static int index = 1;
 
     @Override
-    public synchronized void run() {
+    public void run() {
         while (true) {
 
-            if (index > MAX) {
+            if (isCheck()) {
                 break;
             }
-            try {
-                Thread.sleep(5);
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            System.out.println(Thread.currentThread() + " 的号码是：" + index++);
 
         }
 
+    }
+
+    public synchronized boolean isCheck() {
+        if (index > MAX) {
+            return true;
+        }
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread() + " 的号码是：" + index++);
+        return false;
     }
 
 }
