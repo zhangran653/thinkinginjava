@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61505a77-929f-4045-a040-21984eed4552" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadClose.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadClose2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadInterrupt.java" afterPath="$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadInterrupt.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,16 +19,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="List.class" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/lib/tools.jar!/com/sun/tools/javac/util/List.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/LinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -145,15 +134,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadClose.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ThreadClose.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadClose.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="365">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
               <folding>
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#406#407#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadClose2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadClose2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadCreate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadInterrupt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadClose.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadClose2.java" />
       </list>
     </option>
   </component>
@@ -470,27 +470,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
   </component>
-  <component name="RunManager" selected="Application.ThreadClose">
-    <configuration default="false" name="Bank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.ran.learn.thread.lession01.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.ran.learn.thread.lession01.Bank" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ran-think" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.ThreadClose2$Worker">
     <configuration default="false" name="CreateThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -559,6 +539,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.ran.learn.lession2.ThreadClose" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ran-think" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ThreadClose2$Worker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.ran.learn.lession2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.ran.learn.lession2.ThreadClose2$Worker" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1226,19 +1226,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Bank" />
-      <item index="1" class="java.lang.String" itemvalue="Application.CreateThread" />
-      <item index="2" class="java.lang.String" itemvalue="Application.ThreadCreate" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ThreadInterrupt" />
-      <item index="4" class="java.lang.String" itemvalue="Application.ThreadClose" />
+      <item index="0" class="java.lang.String" itemvalue="Application.CreateThread" />
+      <item index="1" class="java.lang.String" itemvalue="Application.ThreadCreate" />
+      <item index="2" class="java.lang.String" itemvalue="Application.ThreadInterrupt" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ThreadClose" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ThreadClose2$Worker" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.ThreadClose" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ThreadInterrupt" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ThreadCreate" />
-        <item index="3" class="java.lang.String" itemvalue="Application.CreateThread" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Bank" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ThreadClose2$Worker" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ThreadClose" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ThreadInterrupt" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ThreadCreate" />
+        <item index="4" class="java.lang.String" itemvalue="Application.CreateThread" />
       </list>
     </recent_temporary>
   </component>
@@ -1267,12 +1267,12 @@
       <workItem from="1500563152539" duration="4116000" />
       <workItem from="1506596845998" duration="85000" />
       <workItem from="1508857985434" duration="2170000" />
-      <workItem from="1508941964521" duration="2842000" />
+      <workItem from="1508941964521" duration="3137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12891000" />
+    <option name="totallyTimeSpent" value="13186000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1398" height="877" extended-state="6" />
@@ -1288,7 +1288,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3715415" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3715415" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1342,13 +1342,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ran/learn/concurrency/chapter01/TryConcurrency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4471">
@@ -1774,12 +1767,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadClose.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="365">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ran/learn/lession2/ThreadClose2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
