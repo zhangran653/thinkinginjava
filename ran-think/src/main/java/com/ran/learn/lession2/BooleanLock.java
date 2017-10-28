@@ -13,6 +13,8 @@ public class BooleanLock implements Lock {
 
     private Collection<Thread> blockedCollection = new ArrayList<>();
 
+    private Thread currentThread;
+
     public BooleanLock() {
         this.initValue = false;
     }
@@ -29,14 +31,18 @@ public class BooleanLock implements Lock {
         }
         this.initValue = true;
         blockedCollection.remove(Thread.currentThread());
+        this.currentThread = Thread.currentThread();
 
     }
 
     @Override
     public synchronized void unlock() {
-        initValue = false;
-        System.out.println(Thread.currentThread().getName() + " release the lock.");
-        this.notifyAll();
+        if (this.currentThread == Thread.currentThread()) {
+            initValue = false;
+            System.out.println(Thread.currentThread().getName() + " release the lock.");
+            this.notifyAll();
+        }
+
     }
 
     @Override
