@@ -6,11 +6,13 @@ package com.ran.learn.lession2;
 public class ThreadGroupTest {
     public static void main(String[] args) {
         ThreadGroup tg1 = new ThreadGroup("tg1");
+        tg1.setDaemon(true);
         Thread t1 = new Thread(tg1, () -> {
             while (true) {
                 try {
                     System.out.println("t1...");
                     Thread.sleep(1000);
+                    break;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                     System.out.println("t1 interrupted");
@@ -23,13 +25,14 @@ public class ThreadGroupTest {
         t1.start();
 
 
-
         ThreadGroup tg2 = new ThreadGroup(tg1, "tg1");
         Thread t2 = new Thread(tg2, () -> {
+
             while (true) {
                 try {
                     System.out.println("t2...");
                     Thread.sleep(1000);
+                    break;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                     System.out.println("t2 interrupted");
@@ -50,7 +53,18 @@ public class ThreadGroupTest {
         System.out.println(tg2.getName());
         System.out.println(tg2.activeCount());
 
-        tg1.interrupt();
+
+        try {
+            Thread.sleep(5_000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(tg1.activeCount() + "==" + tg1.isDestroyed());
+
+
+        //tg1.interrupt();
+
 
     }
 }
