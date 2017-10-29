@@ -23,7 +23,7 @@ public class BooleanLock implements Lock {
     public synchronized void lock() {
         while (initValue) {
             try {
-                System.out.println(Thread.currentThread().getName()+" is waiting...");
+                System.out.println(Thread.currentThread().getName() + " is waiting...");
                 blockedCollection.add(Thread.currentThread());
                 this.wait();
 
@@ -56,7 +56,7 @@ public class BooleanLock implements Lock {
         while (initValue) {
             try {
                 blockedCollection.add(Thread.currentThread());
-                this.wait();
+                this.wait(mills);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
