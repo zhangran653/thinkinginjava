@@ -9,6 +9,8 @@ public interface Lock {
 
     void lock();
 
+    void lock(long mills);
+
     void unlock();
 
     Collection<Thread> getBlockedThread();
