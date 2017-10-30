@@ -6,18 +6,18 @@ package com.ran.learn.lession2;
 public class SimpleThreadPoolTest {
     public static void main(String[] args) throws Exception {
         SimpleThreadPool pool = new SimpleThreadPool();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 40; i++) {
             int finalI = i;
             pool.addTask(() -> {
                 System.out.println(Thread.currentThread().getName() + " ==> is execute  task " + finalI);
                 try {
-                    Thread.sleep(2_000);
+                    Thread.sleep(5_000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             });
         }
         pool.shutdown();
-        pool.addTask(() -> System.out.println("==="));
+        //pool.addTask(() -> System.out.println("==="));
     }
 }
