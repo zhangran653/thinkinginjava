@@ -16,13 +16,24 @@ public class SimpleThreadPool {
     private static volatile int seq = 0;
     private static final List<Thread> TASK_EXECUTORS = new ArrayList<>();
     private static final ThreadGroup THREAD_GROUP = new ThreadGroup("Simple_Threadpool_group");
+    private static int TASK_SIZE;
+    private static final int TASK_QUEUE_DEFAULT_SIZE = 20;
+
+
+    public static final DiscardPolicy DEFAULT_POLICY = () -> {
+        throw new DiscardException("task size too large.");
+    };
+
+    private final DiscardPolicy discardPolicy;
 
     public SimpleThreadPool() {
-        this(DEFAULT_SIZE);
+        this(DEFAULT_SIZE, TASK_QUEUE_DEFAULT_SIZE, DEFAULT_POLICY);
     }
 
-    public SimpleThreadPool(int size) {
+    public SimpleThreadPool(int size, int taskSize, DiscardPolicy discardPolicy) {
         this.size = size;
+        this.TASK_SIZE = taskSize;
+        this.discardPolicy = discardPolicy;
         init();
     }
 
@@ -35,11 +46,30 @@ public class SimpleThreadPool {
 
     }
 
-    public void addTask(Runnable runnable) {
+    public void addTask(Runnable runnable) throws DiscardException {
         synchronized (TASK_QUEUE) {
+            if (TASK_QUEUE.size() >= TASK_SIZE) {
+                discardPolicy.discard();
+            }
             TASK_QUEUE.addLast(runnable);
             TASK_QUEUE.notifyAll();
         }
+    }
+
+
+    public void shutdown() {
+        while (!TASK_QUEUE.isEmpty()) {
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        int executors = 0;
+
+        TASK_EXECUTORS.forEach(t -> {
+
+        });
     }
 
     private TaskExecutor createExecutor() {
