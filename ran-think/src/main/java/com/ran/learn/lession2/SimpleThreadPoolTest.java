@@ -6,7 +6,7 @@ package com.ran.learn.lession2;
 public class SimpleThreadPoolTest {
     public static void main(String[] args) throws Exception {
         SimpleThreadPool pool = new SimpleThreadPool();
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 20; i++) {
             int finalI = i;
             pool.addTask(() -> {
                 System.out.println(Thread.currentThread().getName() + " ==> is execute  task " + finalI);
@@ -17,5 +17,7 @@ public class SimpleThreadPoolTest {
                 }
             });
         }
+        pool.shutdown();
+        pool.addTask(() -> System.out.println("==="));
     }
 }

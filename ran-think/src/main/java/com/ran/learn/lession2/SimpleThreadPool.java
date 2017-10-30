@@ -14,10 +14,11 @@ public class SimpleThreadPool {
     private static final LinkedList<Runnable> TASK_QUEUE = new LinkedList<>();
     private static final String THREAD_PREFIX = "SIMPLE_THREAD_POOL-";
     private static volatile int seq = 0;
-    private static final List<Thread> TASK_EXECUTORS = new ArrayList<>();
+    private static final List<TaskExecutor> TASK_EXECUTORS = new ArrayList<>();
     private static final ThreadGroup THREAD_GROUP = new ThreadGroup("Simple_Threadpool_group");
     private static int TASK_SIZE;
     private static final int TASK_QUEUE_DEFAULT_SIZE = 20;
+    private static boolean isShutDown = false;
 
 
     public static final DiscardPolicy DEFAULT_POLICY = () -> {
@@ -46,8 +47,11 @@ public class SimpleThreadPool {
 
     }
 
-    public void addTask(Runnable runnable) throws DiscardException {
+    public void addTask(Runnable runnable) throws Exception {
         synchronized (TASK_QUEUE) {
+            if (isShutDown) {
+                throw new Exception("thread poll is shutdown.");
+            }
             if (TASK_QUEUE.size() >= TASK_SIZE) {
                 discardPolicy.discard();
             }
@@ -65,11 +69,26 @@ public class SimpleThreadPool {
                 e.printStackTrace();
             }
         }
-        int executors = 0;
+        int executors = TASK_EXECUTORS.size();
+        while (executors > 0) {
+            for (TaskExecutor taskExecutor : TASK_EXECUTORS) {
+                if (taskExecutor.getTaskState() == TaskState.BLOCKED) {
+                    taskExecutor.interrupt();
+                    taskExecutor.shutdown();
+                    executors--;
+                } else {
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
 
-        TASK_EXECUTORS.forEach(t -> {
+        }
+        System.out.println("all threads are dead.");
+        isShutDown = true;
 
-        });
     }
 
     private TaskExecutor createExecutor() {
@@ -81,13 +100,16 @@ public class SimpleThreadPool {
         FREE, RUNNING, BLOCKED, DEAD
     }
 
-    private class TaskExecutor extends Thread {
+    private static class TaskExecutor extends Thread {
         private TaskState taskState = TaskState.FREE;
 
         private TaskExecutor(ThreadGroup threadGroup, String name) {
             super(threadGroup, name);
         }
 
+        public TaskState getTaskState() {
+            return taskState;
+        }
 
         public void run() {
             OUTER:
@@ -99,7 +121,6 @@ public class SimpleThreadPool {
                             taskState = TaskState.BLOCKED;
                             TASK_QUEUE.wait();
                         } catch (InterruptedException e) {
-                            e.printStackTrace();
                             break OUTER;
                         }
                     }
