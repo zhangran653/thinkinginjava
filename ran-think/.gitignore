@@ -6,7 +6,7 @@
 /.DS_Store
 /.externalToolBuildersit
 /logs/
-/.idea
-/.idea/
+.idea
+.idea/
 /src/main/resources/ThreadLifeCycle.jpeg
 src/test/
