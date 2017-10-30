@@ -34,7 +34,6 @@ public class SimpleThreadPool extends Thread {
                         , TASK_QUEUE.size(), TASK_EXECUTORS.size());
                 if (TASK_QUEUE.size() > active && size < active) {
                     int toBeCreated = active - size;
-                    System.out.println("toBeCreated 1 " + toBeCreated);
                     for (int i = 0; i < toBeCreated; i++) {
                         TaskExecutor taskExecutor = createExecutor();
                         TASK_EXECUTORS.add(taskExecutor);
