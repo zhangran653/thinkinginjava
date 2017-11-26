@@ -1,7 +1,5 @@
 package com.ran.learn.lession2;
 
-import com.ran.learn.concurrency.chapter07.ThreadClose;
-
 /**
  * Created by zhangran on 2017/10/24.
  */
